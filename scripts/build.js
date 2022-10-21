@@ -17,8 +17,8 @@ const config = {
           const code = Object.entries(data)
             .map(
               ([specifier, regexp]) => `
-            export const ${specifier} = ${regexp.toString()};
-          `
+                export const ${specifier} = ${regexp.toString()};
+              `
             )
             .join("\n");
 
