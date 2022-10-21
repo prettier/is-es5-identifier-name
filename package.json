@@ -1,0 +1,29 @@
+{
+  "name": "@prettier/is-es5-identifier-name",
+  "version": "0.0.1",
+  "exports": {
+    ".": "./index.js",
+    "./*": "./*"
+  },
+  "repository": "prettier/is-es5-identifier-name",
+  "author": "fisker Cheung <lionkay@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "yarn@3.2.4",
+  "files": [
+    "index.js"
+  ],
+  "devDependencies": {
+    "esbuild": "0.15.12",
+    "esutils": "2.0.3",
+    "prettier": "2.7.1",
+    "regenerate": "1.4.2",
+    "unicode-9.0.0": "0.7.5"
+  },
+  "scripts": {
+    "build": "node scripts/build.js",
+    "test": "yarn build && node --test",
+    "lint": "prettier . --check",
+    "format": "prettier . --write"
+  }
+}
