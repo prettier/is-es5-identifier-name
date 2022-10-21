@@ -6,4 +6,4 @@ node_modules
 !.yarn/versions
 .pnp.*
 .nyc_output
-index.js
+dist

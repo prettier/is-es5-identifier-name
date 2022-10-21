@@ -7,7 +7,7 @@ const config = {
   entryPoints: [url.fileURLToPath(new URL("./src/index.js", PROJECT_ROOT))],
   bundle: true,
   format: "esm",
-  outfile: url.fileURLToPath(new URL("./index.js", PROJECT_ROOT)),
+  outfile: url.fileURLToPath(new URL("./dist/index.js", PROJECT_ROOT)),
   plugins: [
     {
       name: "evaluate-regexp",

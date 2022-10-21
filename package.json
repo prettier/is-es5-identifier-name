@@ -1,17 +1,15 @@
 {
   "name": "@prettier/is-es5-identifier-name",
   "version": "0.0.1",
-  "exports": {
-    ".": "./index.js",
-    "./*": "./*"
-  },
+  "description": "Check if provided string is an `IdentifierName` as specified in ECMA262 edition 5.1 section 7.6.",
   "repository": "prettier/is-es5-identifier-name",
   "author": "fisker Cheung <lionkay@gmail.com>",
   "license": "MIT",
   "type": "module",
+  "exports": "./dist/index.js",
   "packageManager": "yarn@3.2.4",
   "files": [
-    "index.js"
+    "dist/index.js"
   ],
   "devDependencies": {
     "esbuild": "0.15.12",
@@ -24,6 +22,12 @@
     "build": "node scripts/build.js",
     "test": "yarn build && node --test",
     "lint": "prettier . --check",
-    "format": "prettier . --write"
+    "format": "prettier . --write",
+    "dist:npm": "yarn build && np --yolo --no-yarn"
+  },
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
