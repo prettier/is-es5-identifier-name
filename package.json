@@ -23,7 +23,7 @@
     "test": "yarn build && node --test",
     "lint": "prettier . --check",
     "format": "prettier . --write",
-    "dist:npm": "yarn build && np --yolo --no-yarn"
+    "release": "yarn build && np --yolo --no-yarn"
   },
   "sideEffects": false,
   "publishConfig": {
