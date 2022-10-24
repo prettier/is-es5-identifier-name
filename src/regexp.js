@@ -50,9 +50,7 @@ const identifierPart = regenerate()
   .add(0x24) // $ (dollar)
   .add(0x5f); // _ (underscore)
 
-const identifierStartRegexp = identifierStart.toRegExp();
-const identifierPartRegexp = identifierPart.toRegExp();
 const identifierRegexp = new RegExp(
-  "^" + identifierStartRegexp.source + identifierPartRegexp.source + "*$"
+  "^" + identifierStart.toString() + identifierPart.toString() + "*$"
 );
 export default identifierRegexp;
