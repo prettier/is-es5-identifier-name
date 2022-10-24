@@ -12,7 +12,7 @@ const version = "9.0.0";
 // Set up a shorthand function to import Unicode data.
 const get = async function (what) {
   const { default: codePoints } = await import(
-    "unicode-" + version + "/" + what + "/code-points.js"
+    "@unicode/unicode-" + version + "/" + what + "/code-points.js"
   );
   return codePoints;
 };
@@ -50,9 +50,9 @@ const identifierPart = regenerate()
   .add(0x24) // $ (dollar)
   .add(0x5f); // _ (underscore)
 
-const nonAsciiIdentifierStart = identifierStart.toRegExp();
-const nonAsciiIdentifierPart = identifierPart.toRegExp();
-const nonAsciiIdentifier = new RegExp(
-  "^" + nonAsciiIdentifierStart.source + nonAsciiIdentifierPart.source + "*$"
+const identifierStartRegexp = identifierStart.toRegExp();
+const identifierPartRegexp = identifierPart.toRegExp();
+const identifierRegexp = new RegExp(
+  "^" + identifierStartRegexp.source + identifierPartRegexp.source + "*$"
 );
-export default nonAsciiIdentifier;
+export default identifierRegexp;

@@ -1,4 +1,4 @@
-import nonAsciiIdentifier from "./regexp.js";
+import identifierRegexp from "./regexp.js";
 
-const isEs5IdentifierName = (id) => nonAsciiIdentifier.test(id);
+const isEs5IdentifierName = (id) => identifierRegexp.test(id);
 export default isEs5IdentifierName;
