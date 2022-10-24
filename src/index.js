@@ -2,12 +2,12 @@ import { nonAsciiIdentifierStart, nonAsciiIdentifierPart } from "./regexps.js";
 
 // Based on https://github.com/estools/esutils
 
-function isEs5IdentifierStart(codePoint) {
-  return nonAsciiIdentifierStart.test(String.fromCodePoint(codePoint));
+function isEs5IdentifierStart(character) {
+  return nonAsciiIdentifierStart.test(character);
 }
 
-function isEs5IdentifierPart(codePoint) {
-  return nonAsciiIdentifierPart.test(String.fromCodePoint(codePoint));
+function isEs5IdentifierPart(character) {
+  return nonAsciiIdentifierPart.test(character);
 }
 
 function isEs5IdentifierName(id) {
@@ -15,12 +15,12 @@ function isEs5IdentifierName(id) {
     return false;
   }
 
-  if (!isEs5IdentifierStart(id.charCodeAt(0))) {
+  if (!isEs5IdentifierStart(id.charAt(0))) {
     return false;
   }
 
   for (let index = 1, length = id.length; index < length; ++index) {
-    if (!isEs5IdentifierPart(id.charCodeAt(index))) {
+    if (!isEs5IdentifierPart(id.charAt(index))) {
       return false;
     }
   }
