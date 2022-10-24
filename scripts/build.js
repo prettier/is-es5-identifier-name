@@ -12,18 +12,9 @@ const config = {
     {
       name: "evaluate-regexp",
       setup(build) {
-        build.onLoad({ filter: /regexps\.js$/ }, async ({ path }) => {
-          const data = await import(url.pathToFileURL(path));
-          const code = Object.entries(data)
-            .reverse()
-            .map(
-              ([specifier, regexp]) => `
-                export const ${specifier} = ${regexp.toString()};
-              `
-            )
-            .join("\n");
-
-          return { contents: code };
+        build.onLoad({ filter: /regexp\.js$/ }, async ({ path }) => {
+          const { default: regexp } = await import(url.pathToFileURL(path));
+          return { contents: `export default ${regexp.toString()};` };
         });
       },
     },
