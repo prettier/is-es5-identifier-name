@@ -5,7 +5,7 @@ import isEs5Identifier from "./dist/index.js";
 // https://github.com/estools/esutils/blob/a825f91fd1d1e3a9fff84227cb06c011d8a0b9e8/test/code.coffee#L137
 describe("isEs5Identifier(Start)", () => {
   it("returns true if provided code can be a start of Identifier in ES5", () => {
-    const characters = ["a", "z", "_", "$", "ゆ"];
+    const characters = ["a", "Z", "_", "$", "ゆ"];
     for (const character of characters) {
       assert.equal(isEs5Identifier(character), true);
     }
@@ -24,7 +24,7 @@ describe("isEs5Identifier(Start)", () => {
 // https://github.com/estools/esutils/blob/a825f91fd1d1e3a9fff84227cb06c011d8a0b9e8/test/code.coffee#L147
 describe("isEs5Identifier(Part)", () => {
   it("returns true if provided code can be a part of Identifier in ES5", () => {
-    const characters = ["a", "z", "_", "$", "ゆ"];
+    const characters = ["a", "Z", "_", "$", "ゆ"];
     for (const character of characters) {
       assert.equal(isEs5Identifier("$" + character), true);
     }
