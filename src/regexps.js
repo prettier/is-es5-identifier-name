@@ -34,12 +34,17 @@ const Pc = await get("General_Category/Connector_Punctuation");
 const identifierStart = regenerate()
   .add(Lu, Ll, Lt, Lm, Lo, Nl)
   .removeRange(0x010000, 0x10ffff) // remove astral symbols
-  .removeRange(0x00, 0x7f); // remove ASCII symbols (esutils-specific)
+  .removeRange(0x00, 0x7f) // remove ASCII symbols (esutils-specific)
+  .addRange(0x61, 0x7a) // a..z
+  .addRange(0x41, 0x5a) // A..Z
+  .add(0x24) // $ (dollar)
+  .add(0x5f); // _ (underscore)
+
 const identifierStartCodePoints = identifierStart.toArray();
 const identifierPart = regenerate(identifierStartCodePoints)
   .add("\u200C", "\u200D", Mn, Mc, Nd, Pc)
   .removeRange(0x010000, 0x10ffff) // remove astral symbols
-  .removeRange(0x00, 0x7f); // remove ASCII symbols (esutils-specific)
+  .addRange(0x30, 0x39); // 0..9
 
 export const nonAsciiIdentifierStart = identifierStart.toRegExp();
 export const nonAsciiIdentifierPart = identifierPart.toRegExp();

@@ -15,6 +15,7 @@ const config = {
         build.onLoad({ filter: /regexps\.js$/ }, async ({ path }) => {
           const data = await import(url.pathToFileURL(path));
           const code = Object.entries(data)
+            .reverse()
             .map(
               ([specifier, regexp]) => `
                 export const ${specifier} = ${regexp.toString()};

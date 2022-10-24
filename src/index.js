@@ -2,35 +2,12 @@ import { nonAsciiIdentifierStart, nonAsciiIdentifierPart } from "./regexps.js";
 
 // Based on https://github.com/estools/esutils
 
-const IDENTIFIER_START = Array.from(
-  { length: 0x80 },
-  (_, codePoint) =>
-    (codePoint >= 0x61 && codePoint <= 0x7a) || // a..z
-    (codePoint >= 0x41 && codePoint <= 0x5a) || // A..Z
-    codePoint === 0x24 || // $ (dollar)
-    codePoint === 0x5f // _ (underscore)
-);
-
-const IDENTIFIER_PART = Array.from(
-  { length: 0x80 },
-  (_, codePoint) =>
-    (codePoint >= 0x61 && codePoint <= 0x7a) || // a..z
-    (codePoint >= 0x41 && codePoint <= 0x5a) || // A..Z
-    (codePoint >= 0x30 && codePoint <= 0x39) || // 0..9
-    codePoint === 0x24 || // $ (dollar)
-    codePoint === 0x5f // _ (underscore)
-);
-
 function isEs5IdentifierStart(codePoint) {
-  return codePoint < 0x80
-    ? IDENTIFIER_START[codePoint]
-    : nonAsciiIdentifierStart.test(String.fromCodePoint(codePoint));
+  return nonAsciiIdentifierStart.test(String.fromCodePoint(codePoint));
 }
 
 function isEs5IdentifierPart(codePoint) {
-  return codePoint < 0x80
-    ? IDENTIFIER_PART[codePoint]
-    : nonAsciiIdentifierPart.test(String.fromCodePoint(codePoint));
+  return nonAsciiIdentifierPart.test(String.fromCodePoint(codePoint));
 }
 
 function isEs5IdentifierName(id) {
