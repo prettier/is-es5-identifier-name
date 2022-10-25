@@ -1,6 +1,6 @@
 {
   "name": "@prettier/is-es5-identifier-name",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Check if provided string is an `IdentifierName` as specified in ECMA262 edition 5.1 section 7.6.",
   "repository": "prettier/is-es5-identifier-name",
   "author": "fisker Cheung <lionkay@gmail.com>",
