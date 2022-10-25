@@ -23,13 +23,20 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@prettier/is-es5-identifier-name@workspace:."
   dependencies:
+    "@unicode/unicode-9.0.0": 1.3.1
     esbuild: 0.15.12
     esutils: 2.0.3
     prettier: 2.7.1
     regenerate: 1.4.2
-    unicode-9.0.0: 0.7.5
   languageName: unknown
   linkType: soft
+
+"@unicode/unicode-9.0.0@npm:1.3.1":
+  version: 1.3.1
+  resolution: "@unicode/unicode-9.0.0@npm:1.3.1"
+  checksum: 14efef5e43df33a1556a857846162598f6dd62118c023e15242f1b32a5b613c8b1e7441cc89eddf92230c96d418048bd31637e94974e19a3cfdae03460cdb079
+  languageName: node
+  linkType: hard
 
 "esbuild-android-64@npm:0.15.12":
   version: 0.15.12
@@ -268,12 +275,5 @@ __metadata:
   version: 1.4.2
   resolution: "regenerate@npm:1.4.2"
   checksum: 3317a09b2f802da8db09aa276e469b57a6c0dd818347e05b8862959c6193408242f150db5de83c12c3fa99091ad95fb42a6db2c3329bfaa12a0ea4cbbeb30cb0
-  languageName: node
-  linkType: hard
-
-"unicode-9.0.0@npm:0.7.5":
-  version: 0.7.5
-  resolution: "unicode-9.0.0@npm:0.7.5"
-  checksum: ae0fb8b84a14fb374cf0d268e6fe54614013e5aac473230794df821cb31462d410d771ff8a3eac684cb882b3e5388df49f8149e0c75fbb87a6b8b4074f397f45
   languageName: node
   linkType: hard
