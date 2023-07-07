@@ -51,6 +51,6 @@ const identifierPart = regenerate()
   .add(0x5f); // _ (underscore)
 
 const identifierRegexp = new RegExp(
-  "^" + identifierStart.toString() + identifierPart.toString() + "*$"
+  "^" + identifierStart.toString() + identifierPart.toString() + "*$",
 );
 export default identifierRegexp;
