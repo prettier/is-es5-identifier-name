@@ -7,5 +7,6 @@ import isEs5IdentifierName from "@prettier/is-es5-identifier-name";
 
 isEs5IdentifierName("prettier");
 // -> true
+```
 */
 export default function isEs5IdentifierName(id: string): boolean;
