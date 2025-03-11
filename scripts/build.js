@@ -21,4 +21,4 @@ await fs.writeFile(
   ),
 );
 
-console.log('Build succeed!')
+console.log("Build succeed!");
