@@ -5,7 +5,7 @@ Check if provided string is an `IdentifierName` as specified in [ECMA262 edition
 
 @example
 ```js
-import isEs5IdentifierName from "@prettier/is-es5-identifier-name";
+import isEs5IdentifierName from "is-es5-identifier-name";
 
 isEs5IdentifierName("prettier");
 // -> true

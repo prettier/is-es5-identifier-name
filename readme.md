@@ -5,13 +5,13 @@
 ## Installation
 
 ```bash
-yarn add @prettier/is-es5-identifier-name
+yarn add is-es5-identifier-name
 ```
 
 ## Usage
 
 ```js
-import isEs5IdentifierName from "@prettier/is-es5-identifier-name";
+import isEs5IdentifierName from "is-es5-identifier-name";
 
 isEs5IdentifierName("prettier");
 // -> true
