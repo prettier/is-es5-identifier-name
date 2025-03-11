@@ -1,29 +1,24 @@
 import fs from "node:fs/promises";
-import url from 'node:url';
+import url from "node:url";
 import path from "node:path";
-import esbuild from "esbuild";
+import regexp from "../source/regexp.js";
 
-const toPath = file => path.join(import.meta.dirname, file);
+const content = await fs.readFile(
+  new URL("../source/index.js", import.meta.url),
+  "utf8",
+);
+const importDeclaration = 'import identifierRegexp from "./regexp.js";';
 
-const config = {
-  entryPoints: [toPath("../source/index.js")],
-  bundle: true,
-  format: "esm",
-  outfile: toPath("../index.js"),
-  target: ['es2024'],
-  plugins: [
-    {
-      name: "evaluate-regexp",
-      setup(build) {
-        build.onLoad({ filter: /regexp\.js$/ }, async ({ path }) => {
-          const { default: regexp } = await import(url.pathToFileURL(path));
-          return { contents: `export default ${regexp.toString()};` };
-        });
-      },
-    },
-  ],
-};
+if (!content.startsWith(importDeclaration)) {
+  throw new Error("Unexpected source.");
+}
 
-// console.log(config)
+await fs.writeFile(
+  new URL("../index.js", import.meta.url),
+  content.replace(
+    importDeclaration,
+    `const identifierRegexp = ${regexp.toString()};`,
+  ),
+);
 
-await esbuild.build(config);
+console.log('Build succeed!')

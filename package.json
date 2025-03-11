@@ -14,7 +14,6 @@
   ],
   "devDependencies": {
     "@unicode/unicode-9.0.0": "1.6.5",
-    "esbuild": "0.25.1",
     "prettier": "3.5.3",
     "regenerate": "1.4.2",
     "release-it": "18.1.2"
@@ -23,7 +22,7 @@
     "build": "node scripts/build.js",
     "test": "yarn build && node --test",
     "lint": "prettier . --check",
-    "format": "prettier . --write",
+    "fix": "prettier . --write",
     "release": "yarn build && release-it"
   },
   "sideEffects": false,
