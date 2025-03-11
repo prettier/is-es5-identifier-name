@@ -1,6 +1,6 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
-import isEs5Identifier from "./dist/index.js";
+import isEs5Identifier from "./index.js";
 
 // https://github.com/estools/esutils/blob/a825f91fd1d1e3a9fff84227cb06c011d8a0b9e8/test/code.coffee#L137
 describe("isEs5Identifier(Start)", () => {

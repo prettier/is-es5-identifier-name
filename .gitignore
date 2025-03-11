@@ -6,4 +6,5 @@ node_modules
 !.yarn/versions
 .pnp.*
 .nyc_output
-dist
+# Bundled
+index.js

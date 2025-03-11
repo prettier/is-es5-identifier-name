@@ -1,14 +1,16 @@
 import fs from "node:fs/promises";
-import url from "node:url";
+import url from 'node:url';
+import path from "node:path";
 import esbuild from "esbuild";
 
-const PROJECT_ROOT = new URL("../", import.meta.url);
+const toPath = file => path.join(import.meta.dirname, file);
 
 const config = {
-  entryPoints: [url.fileURLToPath(new URL("./src/index.js", PROJECT_ROOT))],
+  entryPoints: [toPath("../source/index.js")],
   bundle: true,
   format: "esm",
-  outfile: url.fileURLToPath(new URL("./dist/index.js", PROJECT_ROOT)),
+  outfile: toPath("../index.js"),
+  target: ['es2024'],
   plugins: [
     {
       name: "evaluate-regexp",
@@ -25,8 +27,3 @@ const config = {
 // console.log(config)
 
 await esbuild.build(config);
-
-await fs.copyFile(
-  new URL("src/index.d.ts", PROJECT_ROOT),
-  new URL("dist/index.d.ts", PROJECT_ROOT),
-);
