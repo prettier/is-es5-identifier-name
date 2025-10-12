@@ -13,10 +13,10 @@
     "index.d.ts"
   ],
   "devDependencies": {
-    "@unicode/unicode-9.0.0": "1.6.5",
-    "prettier": "3.5.3",
+    "@unicode/unicode-9.0.0": "1.6.12",
+    "prettier": "3.6.2",
     "regenerate": "1.4.2",
-    "release-it": "18.1.2"
+    "release-it": "19.0.5"
   },
   "scripts": {
     "build": "node scripts/build.js",
