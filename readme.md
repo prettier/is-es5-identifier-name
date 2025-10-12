@@ -13,7 +13,7 @@ yarn add is-es5-identifier-name
 ```js
 import isEs5IdentifierName from "is-es5-identifier-name";
 
-isEs5IdentifierName("prettier");
+isEs5IdentifierName("es5");
 // -> true
 
 isEs5IdentifierName("16");
