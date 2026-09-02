@@ -13,7 +13,7 @@
     "index.d.ts"
   ],
   "devDependencies": {
-    "@unicode/unicode-9.0.0": "1.6.17",
+    "@unicode/unicode-9.0.0": "2.0.2",
     "prettier": "3.9.6",
     "regenerate": "1.4.2",
     "release-it": "21.0.2"
