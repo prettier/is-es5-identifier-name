@@ -12,7 +12,7 @@ const version = "9.0.0";
 // Set up a shorthand function to import Unicode data.
 const get = async function (what) {
   const { default: codePoints } = await import(
-    "@unicode/unicode-" + version + "/" + what + "/code-points.js"
+    "@unicode/unicode-" + version + "/" + what + "/code-points.mjs"
   );
   return codePoints;
 };
