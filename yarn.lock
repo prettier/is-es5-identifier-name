@@ -423,10 +423,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@unicode/unicode-9.0.0@npm:1.6.17":
-  version: 1.6.17
-  resolution: "@unicode/unicode-9.0.0@npm:1.6.17"
-  checksum: 10/248d38e18545b9f2c37cce2d7142ef17a59844e08c664feaf5de8ab9cfb86a59275919ff00dd7352dae9005e4276ebbd8f36aa601521c82ba3a19aa69945d727
+"@unicode/unicode-9.0.0@npm:2.0.2":
+  version: 2.0.2
+  resolution: "@unicode/unicode-9.0.0@npm:2.0.2"
+  checksum: 10/8dfa2ae4c509c85cd368e730cef041e26b057de183e5dbc02deacfede02c47f26d0428019a1073114eff1c35240f3192674f33d503cddd78578728b4fd1a68e8
   languageName: node
   linkType: hard
 
@@ -942,7 +942,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "is-es5-identifier-name@workspace:."
   dependencies:
-    "@unicode/unicode-9.0.0": "npm:1.6.17"
+    "@unicode/unicode-9.0.0": "npm:2.0.2"
     prettier: "npm:3.9.6"
     regenerate: "npm:1.4.2"
     release-it: "npm:19.2.4"
